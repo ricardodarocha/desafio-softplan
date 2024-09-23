@@ -1,0 +1,1 @@
+select * from consulta order by seq

@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8871C0EC-B8F1-40A3-B833-E837B188123A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DesafioDelphiCep.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DesafioDelphiCep">
+        <MSBuild Projects="DesafioDelphiCep.dproj"/>
+    </Target>
+    <Target Name="DesafioDelphiCep:Clean">
+        <MSBuild Projects="DesafioDelphiCep.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DesafioDelphiCep:Make">
+        <MSBuild Projects="DesafioDelphiCep.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DesafioDelphiCep"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DesafioDelphiCep:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DesafioDelphiCep:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
