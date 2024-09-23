@@ -70,4 +70,4 @@ A a outra interface externa é conectada à API viacep/ws onde é possível cons
 
 A imagem abaixo ilustra a view do projeto de consulta de CEP
 
-![](https://github.com/ricardodarocha/desafio-softplan/blob/main/view.gif?raw=true)
+![](https://github.com/ricardodarocha/desafio-softplan/blob/main/View.gif?raw=true)
