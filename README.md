@@ -17,7 +17,7 @@ Essa estrutura é flexível e preparada para crescimento, facilitando a manuten�
 - **Uso do Controlador:** O controlador (`TCepController`) centraliza a lógica de interação com o serviço e prepara a aplicação para futuras expansões, como tratamento de eventos ou respostas assíncronas.
 A figura a seguir ilustra os componentes da arquitetura sob a perspectiva do DDD Domain Driven Design
 
-![[arq.png]]
+![](https://github.com/ricardodarocha/desafio-softplan/blob/main/arq.png?raw=true)
 ## Implementação
 
 ```delphi
@@ -55,4 +55,4 @@ end;
 
 ```
 
-![[ddd.png]]
+![](https://github.com/ricardodarocha/desafio-softplan/blob/main/ddd.png?raw=true)
