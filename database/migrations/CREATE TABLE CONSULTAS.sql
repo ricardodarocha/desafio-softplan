@@ -1,5 +1,5 @@
 --  em cumprimento ao requisito US 1.1 Criar uma tabela em um banco de dados de sua escolha onde possa ser
-armazenado os resultados das consultas.
+--armazenado os resultados das consultas.
 
 drop table if exists consultas;
 create table consultas (
