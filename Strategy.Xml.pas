@@ -115,7 +115,6 @@ begin
   end;
 end;
 
-
 class function TXmlStrategy.ParseArray<T>(xmlcontent: String): TObjectList<T>;
 var
   xmldocument: IXmlDocument;

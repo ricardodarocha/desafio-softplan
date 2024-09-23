@@ -6,7 +6,9 @@ uses
   Interfaces,
   Data.Db,
   Model.Cep,
-  Interf.Result, Strategy.Json, Strategy.Xml;
+  Interf.Result,
+  Strategy.Json,
+  Strategy.Xml;
 
 {$M+}
 
@@ -68,7 +70,8 @@ uses
   System.UITypes,
   Strings.Utils,
   Interf.Iterator,
-  Dataset.Iterator.Concrete, System.Generics.Collections;
+  Dataset.Helper,
+  System.Generics.Collections;
 
 function TBuscaCepService.PesquisarCepDb<T>(ACep: String): IResult<TDataset>;
 var
@@ -109,14 +112,14 @@ end;
 procedure TBuscaCepService.ExibirCepEnderecoEncontrado(ADataset: TDataset);
 var
   AEnderecoDto: TEnderecoDto;
-  AIterator: IIterator<TEnderecoDto>;
 
 begin
-  AIterator := TDatasetIterator<TEnderecoDto>.Create(ADataset);
-  for AEnderecoDto in AIterator do
+  FView.Log('Iniciado IIterator<Repository> para TDataset');
+  for AEnderecoDto in ADataset.IntoIterator<TEnderecoDto> do
   begin
     FView.ExibirCepDto(AEnderecoDto);
   end;
+  FView.Log('Finalizado IIterator para TDataset');
 end;
 
 procedure TBuscaCepService.Persistir(ACep: TEndereco);
@@ -144,16 +147,16 @@ end;
 procedure TBuscaCepService.Receive(ADataset: TDataset);
 var
   AEnderecoApi: TEndereco;
-  AIterator: IIterator<TEndereco>;
 
 begin
-  AIterator := TDatasetIterator<TEndereco>.Create(ADataset);
-  for AEnderecoApi in AIterator do
+  FView.Log('Iniciado IIterator<TEndereco> para TDataset');
+  for AEnderecoApi in ADataset.IntoIterator<TEndereco> do
   begin
     FView.ExibirCepDb(ADataset);
     Persistir(AEnderecoApi);
     FView.ExibirCepApi(AEnderecoApi);
   end;
+  FView.Log('Finalizado IIterator');
 
 end;
 

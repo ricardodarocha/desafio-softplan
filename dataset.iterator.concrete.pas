@@ -1,4 +1,4 @@
-unit dataset.iterator.concrete;
+unit Dataset.Iterator.Concrete;
 
 // Esta unit implementa um iterator para Dataset, sendo na minha opinião
 // a forma mais eficiente pois considera reutiliza o próprio recurso de cursor
@@ -8,8 +8,8 @@ interface
 
 uses
   SysUtils,
-  interf.iterator,
-  dataset.utils,
+  Interf.Iterator,
+  Dataset.Utils,
   Data.Db;
 
 type
@@ -49,7 +49,7 @@ begin
   Result := FCurrentIndex < FDataset.RecordCount;
   if Result then
   begin
-    if assigned (FCurrentItem) then FreeAndNil(FCurrentItem);
+    if Assigned (FCurrentItem) then FreeAndNil(FCurrentItem);
     FCurrentItem := TSuperDataset.Parse<T>(FDataset);
     FDataset.Next;
   end;
@@ -57,7 +57,7 @@ end;
 
 destructor TDatasetIterator<T>.destroy;
 begin
-    if assigned (FCurrentItem) then FreeAndNil(FCurrentItem);
+    if Assigned (FCurrentItem) then FreeAndNil(FCurrentItem);
     FDataset := nil;
 
 end;
