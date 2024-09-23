@@ -3,35 +3,44 @@
 ### Bem vindo 👋
 
 Clone este repositório e abra com o Delphi
+
 Configure a conexão com o banco de dados SQLite em anexo. 
+
 Basta configurar o FDConnection com o arquivo em anexo, e rodar o script Migrations.sql para criar as tabelas
 
+
 🟢 Abra o grupo do projeto DesafioSoftplan.groupproj
+
 🟢 Instale o pacote de componentes Componente.bpl. Clique em **Compile** e **Install** 
+
 🟢 Selecione o projeto DesafioDelphiCep.exe e compile
+
 
 ### Conhecimentos empregados
 
 #### Requisitos técnicos:
-✔ 1. Possibilitar armazenar os resultados das consultas em uma tabela (Foi escolhido o BD SQLite) 
-✔ 2. Possibilitar que as consultas possam ser feitas tanto por CEP quanto por
+- [x] 1. Possibilitar armazenar os resultados das consultas em uma tabela (Foi escolhido o BD SQLite) 
+
+- [x]  2. Possibilitar que as consultas possam ser feitas tanto por CEP quanto por
 Endereço Completo.
-✔ 3. Permitir navegar através dos registros já inseridos, e caso seja feita a consulta de
+
+- [x] 3. Permitir navegar através dos registros já inseridos, e caso seja feita a consulta de
 um CEP ou Endereço que já exista cadastrado, deverá perguntar ao usuário se
 deseja atualizar os dados encontrados.
-✔ 4. O Layout Foi desenvolvido usando formulários e um componente visual personalizado
-✔ 5. Disponibilizar o código fonte em um repositório público do GitHub.
-✔ 6. Disponibilizar o readme no github utilizando boas práticas, informando a
+
+- [x] 4. O Layout Foi desenvolvido usando formulários e um componente visual personalizado
+- [x] 5. Disponibilizar o código fonte em um repositório público do GitHub.
+- [x] 6. Disponibilizar o readme no github utilizando boas práticas, informando a
 arquitetura utilizada, patterns aplicadas, como executar o App, etc.
 
 #### Conhecimentos avançados
-1. Utilização de Clean Code
-2. Utilização de SOLID
-3. Utilização de POO
-4. Serialização e desserialização de objetos JSON (Ver o módulo Strategy.Json.pas)
-5. Utilização de Interfaces (Ver o módulo interfaces.pas)
-6. Aplicação de Patterns (Foram empregados diversos patterns, como Fluent Builder Api, Strategy e Iterator. Ver interf.iterator.pas)
-7. Criação de Componentes (Foram desenvolvidos dois componentes para este desafio, sendo um Componente Visual e um Componente Não Visual)
+- [x] 1. Utilização de Clean Code
+- [x] 2. Utilização de SOLID
+- [x] 3. Utilização de POO
+- [x] 4. Serialização e desserialização de objetos JSON (Ver o módulo Strategy.Json.pas)
+- [x] 5. Utilização de Interfaces (Ver o módulo interfaces.pas)
+- [x] 6. Aplicação de Patterns (Foram empregados diversos patterns, como Fluent Builder Api, Strategy e Iterator. Ver interf.iterator.pas)
+- [x] 7. Criação de Componentes (Foram desenvolvidos dois componentes para este desafio, sendo um Componente Visual e um Componente Não Visual)
 
 ### Arquitetura
 
