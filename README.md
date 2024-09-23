@@ -54,5 +54,20 @@ begin
 end;
 
 ```
-
+A imagem abaixo ilustra uma arquitetura similar implementada em Java
 ![](https://github.com/ricardodarocha/desafio-softplan/blob/main/ddd.png?raw=true)
+
+O projeto é conectado a duas interfaces externas, sendo a primeira a conexão local com banco de dados SQLITE. Para tanto, foram criadas duas interfaces
+*ICepApiProvider* e *IDatabaseRepository*
+
+A camada semântica é implemenada usando as tecnologias RestClient e Firedac do Delphi
+A implementação do repositório de dados é uma adaptação em Delphi para tirar o melhor proveito da infraestrutura nativa do Delphi, adaptando o TDataset como provedor de dados preferencial
+
+Porém, para atender ao desafio, também foram implementados parser manuais de XML e Json, conforme pode ser visto no *Service* (TBuscaCepService) que implementa a interface IService
+A interface IService foi destacada para deixar o IController mais organizado, atendendo às boas práticas do Clean Code e os princípios Solid (Single Responsability, Inversion etc)
+
+A a outra interface externa é conectada à API viacep/ws onde é possível consultar CEPS por número ou pelo endereço. A Api também aceita duas estratégias de conexão, via Json ou Xml, devidadente implementada pela interface Strategy , usando o componente RestClient conforme já foi explicado.
+
+A imagem abaixo ilustra a view do projeto de consulta de CEP
+
+![](https://github.com/ricardodarocha/desafio-softplan/blob/main/view.png?raw=true)
