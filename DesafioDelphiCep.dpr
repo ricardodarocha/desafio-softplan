@@ -9,8 +9,6 @@ uses
   interf.iterator in 'interf.iterator.pas',
   dataset.iterator.concrete in 'dataset.iterator.concrete.pas',
   dataset.utils in 'dataset.utils.pas',
-  CepPanelComponent in 'CepPanelComponent.pas',
-  CepMapperComponent in 'CepMapperComponent.pas',
   module.rest.suport in 'module.rest.suport.pas' {api: TDataModule},
   module.database.suport in 'module.database.suport.pas' {dados: TDataModule},
   strings.utils in 'strings.utils.pas',

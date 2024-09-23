@@ -7,8 +7,8 @@ uses
   System.Classes,
   Model.Cep;
 
-  // Este componente nao visual perite ligar um modelo TEndereco proveniente do
-  // Banco de dados TDtoEndereco ou de outras fontes TEndereco;
+  // Este componente nao visual permite ligar um modelo TEndereco proveniente do
+  // Repositório de Banco de dados (TEnderecoDto) ou de outras fontes como Apis (TEndereco);
 
 type
   TCepMapperComponent = class(TComponent)
@@ -25,8 +25,8 @@ type
   protected
     { Protected declarations }
   public
-    function Parse(Value: TEnderecoDto): Boolean; overload;
-    function Parse(Value: TEndereco): Boolean; overload;
+    function Bind(Value: TEnderecoDto): Boolean; overload;
+    function Bind(Value: TEndereco): Boolean; overload;
   published
     property Cep: string read FCep;
     property Logradouro: string read FLogradouro;
@@ -49,7 +49,7 @@ end;
 
 { TCepMapperComponent }
 
-function TCepMapperComponent.Parse(Value: TEndereco): Boolean;
+function TCepMapperComponent.Bind(Value: TEndereco): Boolean;
 begin
   if not Assigned(Value) then
     exit(false);
@@ -66,7 +66,7 @@ begin
   result := true;
 end;
 
-function TCepMapperComponent.Parse(Value: TEnderecoDto): Boolean;
+function TCepMapperComponent.Bind(Value: TEnderecoDto): Boolean;
 begin
 
   if not Assigned(Value) then

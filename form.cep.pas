@@ -20,7 +20,9 @@ uses
   Interfaces,  // Todas as abstrações
   Controller,  // Controlador
   Strategy,    // XML | Json
-  Model.Cep;   // Modelos
+  Model.Cep,   // Modelos
+  CepPanelComponent,
+  CepMapperComponent;
 
 type
 
@@ -29,11 +31,7 @@ type
     edtCEP: TEdit;
     btnBuscarEndereco: TButton;
     Panel1: TPanel;
-    lbLogradouro: TLabel;
     Image2: TImage;
-    lbBairro: TLabel;
-    lbCidade: TLabel;
-    lbIBGE: TLabel;
     DBGrid1: TDBGrid;
     Shape1: TShape;
     edtLogradouro: TEdit;
@@ -44,23 +42,25 @@ type
     cbUf: TComboBox;
     btnBuscarCep: TButton;
     Bevel1: TBevel;
+    FonteDados: TDataSource;
+    AdaptadorCep: TCepMapperComponent;
     console: TMemo;
-    source_dados: TDataSource;
     radio_json: TRadioButton;
     radio_xml: TRadioButton;
+    PanelCep1: TPanelCep;
     procedure press_enter_cep(Sender: TObject; var Key: Char);
     procedure buscarCep(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure proximoControle(Sender: TObject; var Key: Char);
     procedure press_enter_endereco(Sender: TObject; var Key: Char);
     procedure BuscarEndereco(Sender: TObject);
-    procedure source_dadosDataChange(Sender: TObject; Field: TField);
+    procedure FonteDadosDataChange(Sender: TObject; Field: TField);
     procedure FormDestroy(Sender: TObject);
   private
     FController: IBuscaCepController;
     procedure Notify (message: String; Logradouro, Localidade, Uf: String);
 
-    procedure ExibirCepDb(ADataset: Tdataset);
+    procedure ExibirCepDb(ADataset: TDataset);
     procedure ExibirCepApi(ACep: TEndereco);
     procedure ExibirCepDto(Acep: TEnderecoDto);
     procedure Mensagem(AMenasgem: String; tipo: TMsgDlgType);
@@ -125,22 +125,33 @@ end;
 
 procedure TfrmAppBuscarCep.ExibirCepApi(ACep: TEndereco);
 begin
-  console.lines.add(format('%s %s %s %s ', ['consulta na API...',
-    ACep.Logradouro,
-    ACep.Cidade,
-    ACep.uf]));
+  if Assigned(ACep) then
+  begin
+    console.lines.add(format('%s %s %s %s ', ['consulta na API...',
+      ACep.Logradouro,
+      ACep.Cidade,
+      ACep.uf]));
+
+    AdaptadorCep.Bind(ACep);
+    PanelCep1.Endereco := AdaptadorCep;
+  end;
 end;
 
 procedure TfrmAppBuscarCep.ExibirCepDb(ADataset: Tdataset);
 begin
-  Source_Dados.dataset := ADataset;
+  FonteDados.Dataset := ADataset;
   Notify('Uma nova tabela foi atribuída', '{', ADataset.RecordCount.toString, 'resultado(s) }');
 end;
 
 procedure TfrmAppBuscarCep.ExibirCepDto(Acep: TEnderecoDto);
 begin
   if Assigned(ACep) then
+  begin
     Notify('Um cep foi encontrado no banco de dados', '[', Acep.Cep ,']');
+
+    AdaptadorCep.Bind(ACep);
+    PanelCep1.Endereco := AdaptadorCep;
+  end;
 end;
 
 procedure TfrmAppBuscarCep.Notify(message, Logradouro, Localidade, Uf: String);
@@ -173,7 +184,7 @@ begin
   if key = #13 then perform(Wm_nextDlgCtl, 0,0);
 end;
 
-procedure TfrmAppBuscarCep.source_dadosDataChange(Sender: TObject; Field: TField);
+procedure TfrmAppBuscarCep.FonteDadosDataChange(Sender: TObject; Field: TField);
 
 begin
   TThread.Synchronize( nil,
@@ -188,7 +199,6 @@ begin
 
     end;
   end);
-
 
 end;
 

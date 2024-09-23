@@ -14,7 +14,8 @@ uses
   Vcl.Dialogs,
   Vcl.Imaging.pngimage,
   Vcl.ExtCtrls,
-  Vcl.Buttons, form.manutencao;
+  Vcl.Buttons,
+  Form.Manutencao;
 
 type
   TfrmMenu = class(TForm)

@@ -15,6 +15,19 @@ object frmAppBuscarCep: TfrmAppBuscarCep
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
+  object TLabel
+    Left = 50
+    Top = 30
+    Width = 51
+    Height = 24
+    Caption = 'Teste'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Century Gothic'
+    Font.Style = []
+    ParentFont = False
+  end
   object ScrollBox1: TScrollBox
     Left = 0
     Top = 0
@@ -100,56 +113,110 @@ object frmAppBuscarCep: TfrmAppBuscarCep
       OnClick = BuscarEndereco
     end
     object Panel1: TPanel
-      Left = 28
-      Top = 352
+      Left = 29
+      Top = 296
       Width = 341
-      Height = 249
+      Height = 401
       TabOrder = 5
-      Visible = False
-      object lbLogradouro: TLabel
-        Left = 72
-        Top = 32
-        Width = 234
-        Height = 29
-        AutoSize = False
-        Caption = 'LOGRADOURO'
-        WordWrap = True
-      end
       object Image2: TImage
-        Left = 17
-        Top = 16
-        Width = 32
-        Height = 32
+        Left = 296
+        Top = 24
+        Width = 16
+        Height = 17
+        Picture.Data = {
+          07544269746D617036040000424D360400000000000036000000280000001000
+          0000100000000100200000000000000400000000000000000000000000000000
+          0000C49A8CFFB07462FFAF7461FFAF7460FFAE735FFFAE735FFFAE725FFFAD71
+          5EFFAD715EFFAC705CFFAC705CFFAC6F5BFFAC6F5BFFAB6F5BFFAB6E5AFFC095
+          86FFB67E6CFFFBF6F3FFFAF5F2FFFAF5F2FFFAF5F2FFFAF5F2FFFAF5F1FFFAF4
+          F1FFFAF4F1FFF9F4F0FFF9F4F0FFF9F3F0FFF8F3EFFFF9F3EFFFF8F2EEFFB379
+          68FFB77F6FFFFBF7F4FFC89167FFC89167FFC89167FFC89167FFC89167FFC791
+          66FFC79066FFC79066FFC79066FFC79066FFC79065FFC79065FFF9F4F0FFB47B
+          6AFFB88171FFFBF8F5FFC99369FFC89268FFC89268FFC89268FFC89268FFC892
+          68FFC89267FFC89167FFC89167FFC89167FFC89167FFC79166FFFAF4F2FFB47C
+          6BFFB98472FFFCF9F7FFF8F0ECFFF8F1ECFFF7F0ECFFF7F0ECFFF7F0EBFFF8F0
+          EBFFF7F0EBFFF7F0EAFFF7EFEAFFF7EFE9FFF7EFE9FFF6EFEAFFFAF6F3FFB67F
+          6DFFBB8674FFBB8573FFBA8473FFBA8473FFB98472FFB98472FFB98472FFB984
+          72FFB98472FFB98372FFB98371FFB98371FFB98371FFB88371FFB98271FFB780
+          6FFFBB8674FFFDFAF8FFF8F1EDFFF8F2EEFFF8F2EEFFF8F2EEFFF8F2EDFFF7F1
+          EDFFF8F0ECFFF8F0ECFFF8F0EBFFF7F0EBFFF7EFEAFFF7F0EAFFFAF7F5FFB780
+          6FFFBB8674FFFDFAF8FFCB976FFFCB976EFFCB976EFFCB976EFFCB976EFFCB96
+          6DFFCB966DFFCA966DFFCA966DFFF8F0ECFFF7F0ECFFF7F0EAFFFAF7F5FFB780
+          6FFFBF8C7AFFFEFCFBFFCC9970FFCC9870FFCC9870FFCC9870FFCC986FFFCB98
+          6FFFCB976FFFCB976FFFCB976EFFF8F3EFFFF8F3EEFFF9F2EEFFFCFAF9FFBB86
+          75FFC08D7DFFFEFDFCFFFAF5F2FFFAF6F3FFFAF6F2FFFAF6F2FFFAF5F2FFFAF5
+          F1FFF9F4F1FFF9F4F0FFF9F3F0FFF8F3EFFFF8F3EFFFF9F3F0FFFDFBFAFFBC88
+          77FFC28F7EFFBE8B7AFFBE8A79FFBE8B79FFBD8A78FFBD8A78FFBD8A78FFBE89
+          78FFBE8978FFBC8978FFBC8977FFBD8977FFBD8977FFBC8877FFBC8876FFBE8A
+          79FFC39281FFFEFEFDFFFBF7F4FFFBF7F4FFFAF7F5FFFAF7F5FFFBF7F4FFFAF6
+          F4FFFAF6F4FFFAF6F3FFFAF6F2FFF9F5F2FFF9F5F2FFF9F6F2FFFDFCFCFFBF8D
+          7BFFC49483FFFFFEFEFFCF9E77FFCF9E77FFCF9D76FFCF9D76FFCE9D76FFCE9D
+          76FFFBF7F5FFFAF6F4FFFBF6F3FFFAF6F3FFF9F6F3FFFAF6F3FFFEFDFCFFC08F
+          7EFFC59584FFFFFEFEFFD09F78FFD09F78FFCF9F78FFCF9F78FFCF9E77FFCF9E
+          77FFFBF8F5FFFCF8F5FFFBF8F5FFFBF7F4FFFBF7F4FFFBF7F4FFFEFDFDFFC290
+          7FFFC69786FFFFFFFEFFFFFFFEFFFFFEFEFFFFFFFEFFFFFFFEFFFFFEFEFFFFFE
+          FEFFFFFEFEFFFFFEFEFFFEFEFEFFFEFEFEFFFFFEFEFFFFFEFDFFFEFEFDFFC392
+          81FFD9B8ADFFCFA494FFCFA393FFCEA393FFCEA393FFCEA393FFCEA292FFCEA2
+          92FFCDA292FFCDA191FFCDA090FFCCA090FFCC9F8FFFCB9E8EFFCB9E8EFFD3B1
+          A5FF}
       end
-      object lbBairro: TLabel
-        Left = 72
-        Top = 67
-        Width = 234
-        Height = 13
-        AutoSize = False
-        Caption = 'LOGRADOURO'
+      object console: TMemo
+        Left = 0
+        Top = 311
+        Width = 341
+        Height = 89
+        Color = clBtnFace
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMedGray
+        Font.Height = -11
+        Font.Name = 'System'
+        Font.Style = []
+        Lines.Strings = (
+          'sistema iniciado')
+        ParentFont = False
+        TabOrder = 0
       end
-      object lbCidade: TLabel
-        Left = 72
-        Top = 86
-        Width = 234
-        Height = 13
-        AutoSize = False
-        Caption = 'LOGRADOURO'
-      end
-      object lbIBGE: TLabel
-        Left = 72
-        Top = 121
-        Width = 234
-        Height = 32
-        AutoSize = False
-        Caption = 'LOGRADOURO'
+      object radio_json: TRadioButton
+        Left = 16
+        Top = 24
+        Width = 113
+        Height = 17
+        Caption = 'JSON'
+        Checked = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -16
-        Font.Name = 'Tahoma'
+        Font.Height = -21
+        Font.Name = 'Century Gothic'
         Font.Style = []
         ParentFont = False
+        TabOrder = 1
+        TabStop = True
+      end
+      object radio_xml: TRadioButton
+        Left = 135
+        Top = 24
+        Width = 113
+        Height = 17
+        Caption = 'XML'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -21
+        Font.Name = 'Century Gothic'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+      end
+      object PanelCep1: TPanelCep
+        Left = 0
+        Top = 48
+        Width = 341
+        Height = 257
+        BevelInner = bvSpace
+        BevelOuter = bvLowered
+        Caption = '<Ir'#225' renderizar em RunTime>'
+        Color = 8454016
+        ParentBackground = False
+        TabOrder = 3
       end
     end
     object edtLogradouro: TEdit
@@ -251,52 +318,6 @@ object frmAppBuscarCep: TfrmAppBuscarCep
       TabOrder = 6
       OnClick = buscarCep
     end
-    object console: TMemo
-      Left = 28
-      Top = 607
-      Width = 341
-      Height = 89
-      Color = clBtnFace
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clMedGray
-      Font.Height = -11
-      Font.Name = 'System'
-      Font.Style = []
-      Lines.Strings = (
-        'sistema iniciado')
-      ParentFont = False
-      TabOrder = 7
-    end
-    object radio_json: TRadioButton
-      Left = 40
-      Top = 296
-      Width = 113
-      Height = 17
-      Caption = 'JSON'
-      Checked = True
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -21
-      Font.Name = 'Century Gothic'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 8
-      TabStop = True
-    end
-    object radio_xml: TRadioButton
-      Left = 159
-      Top = 296
-      Width = 113
-      Height = 17
-      Caption = 'XML'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -21
-      Font.Name = 'Century Gothic'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 9
-    end
   end
   object DBGrid1: TDBGrid
     Left = 376
@@ -304,7 +325,7 @@ object frmAppBuscarCep: TfrmAppBuscarCep
     Width = 702
     Height = 710
     Align = alClient
-    DataSource = source_dados
+    DataSource = FonteDados
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -318,9 +339,13 @@ object frmAppBuscarCep: TfrmAppBuscarCep
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
   end
-  object source_dados: TDataSource
-    OnDataChange = source_dadosDataChange
-    Left = 1008
-    Top = 32
+  object FonteDados: TDataSource
+    OnDataChange = FonteDadosDataChange
+    Left = 752
+    Top = 104
+  end
+  object AdaptadorCep: TCepMapperComponent
+    Left = 688
+    Top = 176
   end
 end

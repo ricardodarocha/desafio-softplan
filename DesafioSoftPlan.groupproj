@@ -6,6 +6,9 @@
         <Projects Include="DesafioDelphiCep.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="ComponenteCep.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -23,14 +26,23 @@
     <Target Name="DesafioDelphiCep:Make">
         <MSBuild Projects="DesafioDelphiCep.dproj" Targets="Make"/>
     </Target>
+    <Target Name="ComponenteCep">
+        <MSBuild Projects="ComponenteCep.dproj"/>
+    </Target>
+    <Target Name="ComponenteCep:Clean">
+        <MSBuild Projects="ComponenteCep.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ComponenteCep:Make">
+        <MSBuild Projects="ComponenteCep.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="DesafioDelphiCep"/>
+        <CallTarget Targets="DesafioDelphiCep;ComponenteCep"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="DesafioDelphiCep:Clean"/>
+        <CallTarget Targets="DesafioDelphiCep:Clean;ComponenteCep:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="DesafioDelphiCep:Make"/>
+        <CallTarget Targets="DesafioDelphiCep:Make;ComponenteCep:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

@@ -114,6 +114,7 @@ var
   AEnderecoDto: TEnderecoDto;
 
 begin
+  FView.Log('Conectado no Banco de Dados');
   FView.Log('Iniciado IIterator<Repository> para TDataset');
   for AEnderecoDto in ADataset.IntoIterator<TEnderecoDto> do
   begin
@@ -149,6 +150,7 @@ var
   AEnderecoApi: TEndereco;
 
 begin
+  FView.Log('Conectado na API');
   FView.Log('Iniciado IIterator<TEndereco> para TDataset');
   for AEnderecoApi in ADataset.IntoIterator<TEndereco> do
   begin
